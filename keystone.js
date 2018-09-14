@@ -32,10 +32,9 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'port': process.env.NODE_ENV === 'production' ? 80 : 4000
+	'port': process.env.PORT
 });
 
-console.log(process.env.NODE_ENV)
 // Load your project's Models
 keystone.import('models');
 
