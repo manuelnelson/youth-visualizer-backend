@@ -4,7 +4,11 @@
   "private": true,
   "dependencies": {
     "async": "2.1.4",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "cloudinary": "1.7.0",
+    "cross-env": "^5.2.0",
     "dotenv": "4.0.0",
     "express-handlebars": "3.0.0",
     "handlebars": "4.0.6",
@@ -14,16 +18,14 @@
     "stylus": "0.54.5"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
     "eslint": "3.15.0",
     "eslint-config-keystone": "3.0.0",
     "eslint-plugin-react": "^5.1.1"
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "./node_modules/.bin/babel-node keystone.js",
+    "dev": "./node_modules/.bin/babel-node keystone.js",
+    "start": "cross-env NODE_ENV=production ./node_modules/.bin/babel-node keystone.js",
     "compile": "stylus -w public/styles/site.styl -o public/styles/site.css"
   }
 }
