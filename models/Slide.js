@@ -16,6 +16,7 @@ Slide.add({
 	title: { type: String},
 	text: { type: Types.Html, wysiwyg: true},
 	countries: { type: String},
+	selectedGoalUrl: { type: String},
 	index: { type: Number },
 	active: {type: Boolean, default:false},
 });
