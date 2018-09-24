@@ -12,6 +12,18 @@ Story.add({
 	slides: { type: Types.Relationship, ref: 'Slide', many:true}
 });
 
+Story.schema.post('remove', function(next) {
+	if(this.slides && this.slides.length > 0){
+		this.slides.forEach(slide => {
+			keystone.list('Slide').model.findById(slide)
+				.remove(function(err) {
+					// slide has been deleted
+					console.log(`slide with id ${slide} has been removed`)
+				});
+		});
+	}
+});
+
 /**
  * Registration
  */
