@@ -35,6 +35,8 @@ keystone.init({
 	'port': process.env.PORT
 });
 
+keystone.set('signin logo', '/un-youth-envoy-logo-en.png');
+
 // Load your project's Models
 keystone.import('models');
 
