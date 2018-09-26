@@ -25,5 +25,5 @@ Slide.add({
 /**
  * Registration
  */
-Slide.defaultColumns = 'name, email, isAdmin';
+Slide.defaultColumns = 'title';
 Slide.register();
