@@ -60,6 +60,7 @@ keystone.set('routes', require('./routes/index.js'));
 keystone.set('nav', {
 	stories: 'stories',
 	slides: 'slides',
+	homes: 'homes',
 	users: 'users',
 });
 
