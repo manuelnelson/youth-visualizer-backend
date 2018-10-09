@@ -62,6 +62,7 @@ keystone.set('nav', {
 	slides: 'slides',
 	homes: 'homes',
 	users: 'users',
+	highlights: 'highlights'
 });
 
 // Start Keystone to connect to your database and initialise the web server

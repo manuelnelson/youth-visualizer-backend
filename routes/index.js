@@ -44,6 +44,7 @@ exports = module.exports = function (app) {
 	app.use(`/api/stories`, apiRoutes.StoryRoutes);
 	app.use('/api/slides', apiRoutes.SlideRoutes);
 	app.use('/api/homes', apiRoutes.HomeRoutes);
+	app.use('/api/highlights', apiRoutes.HighlightRoutes);
 	app.use('/api/csv', apiRoutes.CsvRoutes);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

@@ -9,7 +9,9 @@ var Story = new keystone.List('Story');
 
 Story.add({
 	created: { type: Date, default: Date.now, index:true },
-	slides: { type: Types.Relationship, ref: 'Slide', many:true}
+	slides: { type: Types.Relationship, ref: 'Slide', many:true},
+	user: {type: Types.Name},
+	name: {type: String}
 });
 
 Story.schema.post('remove', function(next) {
@@ -27,5 +29,5 @@ Story.schema.post('remove', function(next) {
 /**
  * Registration
  */
-Story.defaultColumns = 'created';
+Story.defaultColumns = 'created,name';
 Story.register();
