@@ -70,7 +70,7 @@ function list(req, res, next) {
     let Highlight = keystone.list('Highlight').model;
     delete req.query.limit;
     delete req.query.skip;    
-    return Highlight.find(req.query).skip(parseInt(skip)).limit(parseInt(limit))
+    return Highlight.find(req.query).populate('stories').skip(parseInt(skip)).limit(parseInt(limit))
     .then(highlights => highlights)
     .catch(e => next(e));
 }
