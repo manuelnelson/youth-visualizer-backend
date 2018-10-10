@@ -4,7 +4,7 @@ import keystone from 'keystone';
 * Load highlight and append to req.
 */
 function load(req, res, next, id) {
-    keystone.list('Highlight').model.findById(id).populate('slides')
+    keystone.list('Highlight').model.findById(id).populate('stories')
     .then((highlight) => {
         req.highlight = highlight;
         return next();
