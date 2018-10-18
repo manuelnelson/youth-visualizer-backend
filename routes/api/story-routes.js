@@ -20,9 +20,9 @@ router.route('/:id')
   })
 
   /** PUT /api/abouts/:id - Update home */
-  // .put((req,res,next) => {
-  //   StoryCtrl.update(req,res,next).then(about => res.json(about))
-  // })
+  .put((req,res,next) => {
+    StoryCtrl.update(req,res,next).then(about => res.json(about))
+  })
 
   /** DELETE /api/abouts/:id - Delete home */
   // .delete((req,res,next) => {
