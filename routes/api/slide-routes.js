@@ -13,16 +13,16 @@ router.route('/')
     SlideCtrl.create(req,res,next).then(about => res.json(about))
   });
 
-// router.route('/:id')
+router.route('/:id')
 //   /** GET /api/abouts/:id - Get home */
 //   .get((req,res,next) => {
 //     SlideCtrl.get(req,res,next).then(about => res.json(about))
 //   })
 
   /** PUT /api/abouts/:id - Update home */
-  // .put((req,res,next) => {
-  //   SlideCtrl.update(req,res,next).then(about => res.json(about))
-  // })
+  .put((req,res,next) => {
+    SlideCtrl.update(req,res,next).then(about => res.json(about))
+  })
 
   /** DELETE /api/abouts/:id - Delete home */
   // .delete((req,res,next) => {
