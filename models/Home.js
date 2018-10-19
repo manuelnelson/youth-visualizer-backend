@@ -10,8 +10,8 @@ var Home = new keystone.List('Home');
 Home.add({
 	created: { type: Date, default: Date.now, index:true },
 	name: { type: String, required:true, default: 'Home'},
-	title: {type: Types.Html},
-	introText: {type: Types.Html},
+	title: {type: String},
+	introText: {type: Types.Html, wysiwyg: true},
 	example: { type: Types.Relationship, ref: 'Story', many:false}
 });
 
