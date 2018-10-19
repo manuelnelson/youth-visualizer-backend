@@ -10,7 +10,9 @@ var Story = new keystone.List('Story');
 Story.add({
 	created: { type: Date, default: Date.now, index:true },
 	slides: { type: Types.Relationship, ref: 'Slide', many:true},
-	user: {type: Types.Name},
+	userName: {type: Types.Name},
+	userPosition: {type: String},
+	userEmail: {type: String},
 	name: {type: String}
 });
 

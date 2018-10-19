@@ -50,12 +50,18 @@ function create(req, res, next) {
 * @returns {Slide}
 */
 function update(req, res, next) {
-    for(let prop in req.body.slide){
-        req.slide[prop] = req.body.slide[prop];
-    }
-    return req.slide.save()
-    .then(savedSlide => savedSlide)
-    .catch(e => next(e));
+    const Slide = keystone.list('Slide');
+    console.log(Object.keys(req.body));
+    req.body.countries = req.body.countries.toString();
+    // for(let prop in req.body.slide){
+    //     req.slide[prop] = req.body.slide[prop];
+    // }
+    
+    return new Promise((resolve) => {
+        Slide.updateItem(req.slide,req.body, {fields: Object.keys(req.body)}, (slide) => {
+            resolve(slide);
+        });
+    }) 
 }
 
 /**
